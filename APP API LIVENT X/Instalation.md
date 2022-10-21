@@ -138,7 +138,7 @@ Copiar el archivo .env.example a .env y configurar los datos de conexión a la b
 
 #### Configurar el archivo .htaccess
 
-    sudo vi /var/www/html/page-liventx/public/.htaccess
+    sudo vi /var/www/html/{name}/public/.htaccess
 
 Agregar la siguiente configuración:
 

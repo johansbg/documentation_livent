@@ -1,4 +1,4 @@
-## Documentación de instalación de Page LiventX
+## Documentación de instalación de Livent Panel
 
 ### Requisitos
 
@@ -21,7 +21,7 @@
 
 Para clonar el repositorio de GitHub, ejecutar el siguiente comando:
 
-    git clone https://{user}@bitbucket.org/inmovdev/page-liventx.git
+    git clone https://{user}@bitbucket.org/inmovdev/livent-panel.git
 
 #### Instalar las dependencias de PHP con Composer
 
@@ -139,7 +139,7 @@ Copiar el archivo .env.example a .env y configurar los datos de conexión a la b
 
 #### Configurar el archivo .htaccess
 
-    sudo vi /var/www/html/page-liventx/public/.htaccess
+    sudo vi /var/www/html/{name}/public/.htaccess
 
 Agregar la siguiente configuración:
 
