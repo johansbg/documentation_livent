@@ -2,348 +2,6 @@
 
 En esta sección se detallan las rutas utilizadas en Livent Panel en una tabla con el endpoint, el método, la descripción, el controlador, parametros que recibe y salidas que retorna.
 
-    Route::post('/WebSite-setups-schedule-day', 'WebSiteController@website_schedule_day')
-        ->name('website.schedule-day');
-
-    Route::post('/WebSite-setups-schedule-item', 'WebSiteController@website_schedule_item')
-        ->name('website.schedule-item');
-
-    Route::post('/WebSite-setup-news', 'WebSiteController@store_new')
-        ->name('website.new-store');
-
-    Route::post('launch/questions', 'WebSiteController@launch_question')->name('launch_question');
-
-    Route::post('remove/shedule', 'WebSiteController@remove_schedule')->name('schedule.remove');
-    Route::post('remove/shedule/item', 'WebSiteController@remove_schedule_item')->name('schedule.remove.item');
-
-    Route::post('/WebSite-setup-questions', 'WebSiteController@store_question')
-        ->name('website.question-store');
-
-    Route::post('/WebSite-setup-question-option', 'WebSiteController@store_question_option')
-        ->name('website.question-option-store');
-
-    Route::delete('/WebSite-setup-question-option/{event_id}/{tab_id}/{option_id}', 'WebSiteController@delete_question_option')
-        ->name('website.question-option-delete');
-
-    Route::post('/WebSite-setup-page','WebSiteController@store_page')
-        ->name('website.page-store');
-
-    Route::delete('/WebSite-setup-register-config-page/{event_id}/{config_id}', 'WebSiteController@website_register_config_page_delete_option')
-        ->name('website.register-config-page-delete-option');
-
-    Route::post('/WebSite-setup-register-config/{event_id}', 'WebSiteController@website_register_config_page')
-        ->name('website.register-config-page');
-
-    Route::delete('/WebSite-setup-page/{event_id}/{option_id}', 'WebSiteController@delete_page_slider_option')
-        ->name('website.page-slider-option-delete');
-
-    Route::patch('/WebSite-setup-page/{event_id}/{option_id}', 'WebSiteController@change_page_slider_option')
-        ->name('website.page-slider-option-change');
-
-    Route::post('/WebSite-setup-app','WebSiteController@store_app')
-        ->name('website.app-store');
-
-    Route::post('/WebSite-setup-menu-app/{event_id}', 'WebSiteController@website_menu_app')
-        ->name('website.menu-app');
-
-    Route::delete('/WebSite-setup-menu-app/{event_id}/{option_id}', 'WebSiteController@website_menu_app_delete_option')
-        ->name('website.menu-app-delete-option');
-
-    Route::post('/WebSite-setup-bussines-selectors-config/{event_id}', 'WebSiteController@website_bussines_selectors_config_page')
-        ->name('website.bussines_selectors_config');
-
-    Route::post('/WebSite-setup-page/meeting-live','WebSiteController@store_meeting_live')
-        ->name('website.meeting-live-store');
-
-    Route::post('/WebSite-setup-page/zoom-room', 'WebSiteController@store_zoom_room')
-        ->name('website.zoom-room-store');
-
-    Route::post('/WebSite-setup-company-registration/company-registration', 'WebSiteController@company_registration_store')
-        ->name('company-registration.store');
-
-    Route::post('/WebSite-setup-company-registration-option/company-registration-option', 'WebSiteController@company_registration_option_store')
-        ->name('company-registration-option.store');
-
-     Route::delete('/WebSite-setup-company-registration/company-registration/{id}', 'WebSiteController@company_registration_destroy')
-        ->name('company-registration.destroy');
-
-    Route::delete('/WebSite-setup-company-registration-option/company-registration-option/{id}', 'WebSiteController@company_registration_option_destroy')
-        ->name('company-registration-option.destroy');
-
-    Route::post('/WebSite-setup-meetings', 'WebSiteController@store_setup_meetings')
-        ->name('WebSite.setup-meetings-store');
-
-    Route::post('/WebSite-setup-categories-nw', 'WebSiteController@store_setup_categories_nw')
-        ->name('WebSite.setup-categories-nw-store');
-
-    Route::delete('/WebSite-setup-categories-nw/{id}', 'WebSiteController@delete_setup_categories_nw')
-        ->name('WebSite.setup-categories-nw-delete');
-
-    Route::post('/WebSite-setup-subcategories-nw', 'WebSiteController@store_setup_subcategories_nw')
-        ->name('WebSite.setup-subcategories-nw-store');
-
-    Route::delete('/WebSite-setup-subcategories-nw/{id}', 'WebSiteController@delete_setup_subcategories_nw')
-        ->name('WebSite.setup-subcategories-nw-delete');
-
-    Route::post('/WebSite-setup-type-company-nw', 'WebSiteController@store_setup_type_company_nw')
-        ->name('WebSite.setup-type-company-nw-store');
-
-    Route::delete('/WebSite-setup-type-company-nw/{id}', 'WebSiteController@delete_setup_type_company_nw')
-        ->name('WebSite.setup-type-company-nw-delete');
-
-    Route::post('/WebSite-setup-feedback-nw', 'WebSiteController@store_setup_feedback_nw')
-        ->name('WebSite.setup-feedback-nw-store');
-
-    Route::delete('/WebSite-setup-feedback-nw/{id}', 'WebSiteController@feedback_question_delete')
-        ->name('WebSite.setup-feedback-nw-delete');
-
-
-
-      /* Virtual Space */
-      Route::get('/VirtualSpace2D', 'InteractionController@index2')->name('VirtualSpace2d');
-      Route::get('/VirtualSpace2D-setup/{event_id}', 'InteractionController@setup')->name('VirtualSpace2d.setup');
-
-      Route::get('/InteractionList/{stand}', 'InteractionController@index')->name('VirtualSpace2d.interactionList');
-      Route::get('/Interaction/edit/{id}/{stand}', 'InteractionController@edit')->name('VirtualSpace2d.interactionedit');
-      Route::put('/Interaction/edit/{id}/{stand}', 'InteractionController@update')->name('VirtualSpace2d.interactionupdate');
-
-
-    /* Virtual Space */
-    Route::get('/VirtualSpace', 'VirtualSpaceController@index')->name('VirtualSpace');
-    Route::get('/VirtualSpace-setup/{event_id}', 'VirtualSpaceController@setup')->name('VirtualSpace.setup');
-
-    Route::get('/VirtualSpace-create_catalog/{event_id}', 'VirtualSpaceController@create_catalog')->name('VirtualSpace.create-catalog');
-    Route::post('/VirtualSpace-create', 'VirtualSpaceController@store_catalog')->name('VirtualSpace.store_catalog');
-    Route::get('/VirtualSpace-edit_catalog/{catalog_id}/{event_id}', 'VirtualSpaceController@edit_catalog')->name('VirtualSpace.edit_catalog');
-    Route::put('/VirtualSpace-update_catalog/{catalog_id}/{event_id}', 'VirtualSpaceController@update_catalog')->name('VirtualSpace.update_catalog');
-
-    Route::get('/VirtualSpace-create_brand/{catalog_id}/{event_id}', 'VirtualSpaceController@create_brand')->name('VirtualSpace.create_brand');
-    Route::post('/VirtualSpace-store-brand', 'VirtualSpaceController@store_brand')->name('VirtualSpace.store_brand');
-    Route::get('/VirtualSpace-catalog_brand/{space_id}/{type_id}', 'VirtualSpaceController@catalog_brand')->name('VirtualSpace.catalog_brand');
-    Route::get('/VirtualSpace-edit_brand/{catalog_id}/{event_id}/{id}','VirtualSpaceController@edit_brand')->name('VirtualSpace.edit_brand');
-    Route::put('/VirtualSpace-update_brand/{id}','VirtualSpaceController@update_brand')->name('VirtualSpace.update_brand');
-
-    /**NOTIFICACIONES */
-
-    Route::get('/Notification', 'NotificationController@index')
-        ->name('Notifications');
-
-    Route::get('/Notification-send/{event_id}', 'NotificationController@notifications_send')
-        ->name('Notifications.send');
-
-    Route::post('/Notification-send/{event_id}', 'NotificationController@send_notification')
-        ->name('Notification.send');
-
-    Route::get('/Notification-email-send/{event_id}', 'NotificationController@notifications_email')
-        ->name('Notifications.email');
-
-    Route::post('/Notification-email-send/{event_id}', 'NotificationController@notifications_email_send')
-        ->name('Notifications.email.send');
-
-    ///Solicitud ajasx de las noticas
-    Route::get('/news', 'NewController@get_news');
-
-
-    Route::get('/Execute', 'executeController@index')
-        ->name('Execute');
-    Route::get('/Setting', 'SettingController@index')
-        ->name('Setting');
-
-    Route::prefix('Networking')->group(function () {
-
-        //Rutas de inicio
-        Route::post('NetworkingPlan', 'NetworkingPlanController@index')
-            ->name('NetworkingPlan');
-
-        Route::get('NetworkingPlan', 'NetworkingPlanController@index')
-            ->name('NetworkingPlan');
-
-
-        // Customer - Clientes
-        Route::get('Customer', 'NetworkingCustomerController@index')
-            ->name('NetworkingCustomer');
-
-        Route::get('Customer-create', 'NetworkingCustomerController@create')
-            ->name('NetworkingCustomerCreate');
-
-        Route::post('Customer-store', 'NetworkingCustomerController@store')
-            ->name('NetworkingCustomerStore');
-
-        Route::get('Customer-edit/{NwCustomer}', 'NetworkingCustomerController@edit')
-            ->name('NetworkingCustomerEdit');
-
-        Route::patch ('Customer-update/{NwCustomer}', 'NetworkingCustomerController@update')
-            ->name('NetworkingCustomerUpdate');
-
-        Route::delete('Customer-delete','NetworkingCustomerController@destroy')
-            ->name('NetworkingCustomerDelete');
-
-        Route::post('Customer-status', 'NetworkingCustomerController@status')
-            ->name('NetworkingCustomerStatus');
-
-
-        // Halls - Pabellones
-        Route::get('Hall', 'NetworkingHallController@index')
-            ->name('NetworkingHall');
-
-        Route::get('Hall-create', 'NetworkingHallController@create')
-            ->name('NetworkingHallCreate');
-
-        Route::post('Hall-store', 'NetworkingHallController@store')
-            ->name('NetworkingHallStore');
-
-        Route::get('Hall-edit/{NwHall}', 'NetworkingHallController@edit')
-            ->name('NetworkingHallEdit');
-
-        Route::patch('Hall-update/{NwHall}', 'NetworkingHallController@update')
-            ->name('NetworkingHallUpdate');
-
-        Route::delete('Hall-delete', 'NetworkingHallController@destroy')
-            ->name('NetworkingHallDelete');
-
-        Route::post('Hall-status', 'NetworkingHallController@status')
-            ->name('NetworkingHallStatus');
-
-
-        // Stands - exhibidores
-        Route::get('Stand', 'NetworkingStandController@index')
-            ->name('NetworkingStand');
-
-        Route::get ('Stand-create', 'NetworkingStandController@create')
-            ->name('NetworkingStandCreate');
-
-        Route::get ('Stand-edit/{NwStand}', 'NetworkingStandController@edit')
-            ->name('NetworkingStandEdit');
-
-        Route::post('Stand-store', 'NetworkingStandController@store')
-            ->name('NetworkingStandStore');
-
-        Route::get ('Stand-edit/{NwStand}', 'NetworkingStandController@edit')
-            ->name('NetworkingStandEdit');
-
-        Route::patch ('Stand-update/{NwStand}', 'NetworkingStandController@update')
-            ->name('NetworkingStandUpdate');
-
-        Route::delete('Stand-delete', 'NetworkingStandController@destroy')
-            ->name('NetworkingStandDelete');
-
-        Route::post('Stand-status', 'NetworkingStandController@status')
-                ->name('NetworkingStandStatus');
-
-         // Meeting - Reuniones
-        Route::get('Meeting', 'NetworkingMeetingController@index')
-            ->name('NetworkingMeeting');
-
-        Route::get ('Meeting-create', 'NetworkingMeetingController@create')
-            ->name('NetworkingMeetingCreate');
-
-        Route::post('Meeting-store', 'NetworkingMeetingController@store')
-            ->name('NetworkingMeetingStore');
-
-        Route::get ('Meeting-edit/{NwMeeting}', 'NetworkingMeetingController@edit')
-            ->name('NetworkingMeetingEdit');
-
-        Route::delete('Meeting-delete', 'NetworkingMeetingController@destroy')
-            ->name('NetworkingMeetingDelete');
-
-        Route::post('Meeting-status', 'NetworkingMeetingController@status')
-            ->name('NetworkingMeetingStatus');
-
-        Route::get('Meeting-Attend', 'NetworkingMeetingController@attend')
-            ->name('NetworkingMeetingAttend');
-
-        Route::post('Meeting-Finish', 'NetworkingMeetingController@finish')
-            ->name('NetworkingMeetingFinish');
-
-        Route::patch ('Meeting-update/{NwMeeting}', 'NetworkingMeetingController@update')
-            ->name('NetworkingMeetingUpdate');
-
-        Route::get ('Meeting-update-show/{NwMeeting}', 'NetworkingMeetingController@show')
-            ->name('NetworkingMeetingAttendShow');
-
-        Route::get ('Meeting-video-show', 'NetworkingMeetingController@video')
-            ->name('NetworkingMeetingVideo');
-
-        Route::get('Videoconference', 'NetworkingMeetingController@videoconference')
-            ->name('NetworkingVideoconference');
-
-
-
-        // Executive - Ejecutivos
-        Route::get('Executive', 'NetworkingExecutiveController@index')->name('NetworkingExecutive');
-        Route::get ('Executive-create', 'NetworkingExecutiveController@create')->name('NetworkingExecutiveCreate');
-        Route::post ('Executive-store', 'NetworkingExecutiveController@store')->name('NetworkingExecutiveStore');
-        Route::post ('Executive-show-user', 'NetworkingExecutiveController@showuser')->name('NetworkingExecutiveShowUser');
-        Route::post ('Executive-delete', 'NetworkingExecutiveController@destroy')->name('NetworkingExecutiveDelete');
-
-        // Users - Usuarios
-        Route::get('Users', 'NetworkingUsersController@index')->name('NetworkingUsers');
-        Route::get ('Users-create', 'NetworkingUsersController@create')->name('NetworkingUsersCreate');
-        Route::post ('Users-store', 'NetworkingUsersController@store')->name('NetworkingUsersStore');
-        Route::get ('Users-edit/{UsersNw}', 'NetworkingUsersController@edit')->name('NetworkingUsersEdit');
-        Route::patch ('Users-update/{UsersNw}', 'NetworkingUsersController@update')->name('NetworkingUsersUpdate');
-        Route::post('Users-status', 'NetworkingUsersController@status')->name('NetworkingUsersStatus');
-
-        // Participantes
-        Route::get('Guest', 'NetworkingGuestController@index')->name('NetworkingGuest');
-        Route::get('GuestVisitStand/{stand_id}', 'NetworkingGuestController@VisitStand')->name('GuestVisitStand');
-        Route::get('GuestMyMeeting/{event_id}', 'NetworkingGuestController@MyMeeting')->name('GuestMyMeeting');
-        Route::get('GuestProfile/{event_id}', 'NetworkingGuestController@Profile')->name('GuestProfile');
-        Route::post('GuestAttend', 'NetworkingGuestController@Attend')->name('GuestAttend');
-        Route::get('GuestTarget/{event_id}', 'NetworkingGuestController@Target')->name('GuestTarget');
-        Route::get('GuestExplore/{event_id}', 'NetworkingGuestController@Explore')->name('GuestExplore');
-
-
-    });
-    Route::post('showexecutivecustomer', 'NetworkingAjaxController@showexecutivecustomer')->name('NetworkingExecutiveShowCustomer');
-    Route::post('GuestReadMeeting', 'NetworkingAjaxController@GuestReadMeeting')->name('NetworkingGuestReadMeeting');
-    Route::post('ActivateRoom', 'NetworkingAjaxController@ActivateRoom')->name('NetworkingActivateRoom');
-
-    Route::post('GuestProfile-delete', 'NetworkingAjaxController@ProfileDelete')->name('NetworkingGuestProfileDelete');
-    Route::post('GuestProfile-insert', 'NetworkingAjaxController@ProfileInsert')->name('NetworkingGuestProfileInsert');
-    Route::post('GuestProfile-show-attribute', 'NetworkingAjaxController@ProfileShowAttribute')->name('NetworkingGuestProfileShowAttribute');
-    Route::post('GuestProfile-show-attribute-profile', 'NetworkingAjaxController@ProfileShowAttributeProfile')->name('NetworkingGuestProfileShowAttributeProfile');
-    Route::post('GuestProfile-category-create', 'NetworkingAjaxController@ProfileCategoryCreate')->name('NetworkingGuestProfileCategoryCreate');
-    Route::post('GuestProfile-attribute-create', 'NetworkingAjaxController@ProfileAttributeCreate')->name('NetworkingGuestProfileAttributeCreate');
-
-    Route::post('GuestTarget-create', 'NetworkingAjaxController@TargetCreate')->name('NetworkingGuestTargetCreate');
-    Route::post('GuestTarget-show-attribute-free', 'NetworkingAjaxController@TargetShowAttributeFree')->name('NetworkingGuestShowAttributeFree');
-    Route::post('GuestTarget-show-attribute', 'NetworkingAjaxController@TargetShowAttribute')->name('NetworkingGuestShowAttribute');
-    Route::post('GuestTarget-insert', 'NetworkingAjaxController@TargetInsert')->name('NetworkingGuestTargetInsert');
-    Route::post('GuestTarget-delete', 'NetworkingAjaxController@TargetDelete')->name('NetworkingGuestTargetDelete');
-
-
-    /**
-     * REPORTES
-     */
-    Route::get('Reports/networking', 'ReportController@networking')
-        ->name('Reports.networking');
-
-    Route::get('Reports/networking/meetings', 'ReportController@networking_meetings')
-        ->name('Reports.networking.meetings');
-
-    Route::post('Reports/networking/meetings/generate', 'ReportController@networking_meetings_generate')
-        ->name('Reports.networking.meetings.generate');
-
-
-    Route::get('Reports/networking/feedback', 'ReportController@networking_feedback')
-        ->name('Reports.networking.feedback');
-
-    Route::post('Reports/networking/feedback/generate', 'ReportController@networking_feedback_generate')
-        ->name('Reports.networking.feedback.generate');
-
-    Route::get('Reports/networking/company', 'ReportController@networking_company')
-        ->name('Reports.networking.company');
-
-    Route::post('Reports/networking/company/generate', 'ReportController@networking_company_generate')
-        ->name('Reports.networking.company.generate');
-
-
-    Route::get('question/feedback/get', 'ReportController@get_questions')
-    ->name('feedback.feedback.get');
-
-
-
 | Endpoint | Privilegio | Método | Descripción | Controlador | Parámetros | Salida |
 |----------|------------|--------|-------------|-------------|------------|--------|
 | /home | Auth | GET | Ruta principal de Livent Panel | App\Http\Controllers\HomeController@index |  |  |
@@ -380,3 +38,135 @@ En esta sección se detallan las rutas utilizadas en Livent Panel en una tabla c
 | /WebSite-setup/{event_id}/{tab_id?}/{item_modal_id?} | Auth | GET-POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@website_setup |  |  |
 | /WebSite-setup-menu-page/{event_id} | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@website_menu_page |  |  |
 | /WebSite-setup-menu-page/{event_id}/{option_id} | Auth | DELETE | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@website_menu_page_delete_option |  |  |
+| /WebSite-setups-schedule-day | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@website_schedule_day |  |  |
+| /WebSite-setups-schedule-item | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@website_schedule_item |  |  |
+| /WebSite-setup-news | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@store_new |  |  |
+| /launch/questions | Auth | GET | Ruta para mostrar las preguntas | App\Http\Controllers\WebSiteController@launch_question |  |  |
+| remove/shedule | Auth | POST | Ruta para eliminar un horario | App\Http\Controllers\WebSiteController@remove_shedule |  |  |
+| remove/shedule/item | Auth | POST | Ruta para eliminar un horario | App\Http\Controllers\WebSiteController@remove_schedule_item |  |  |
+| /WebSite-setup-questions | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@store_question |  |  |
+| /WebSite-setup-question-option | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@store_question_option |  |  |
+| /WebSite-setup-question-option/{event_id}/{tab_id}/{option_id} | Auth | DELETE | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@delete_question_option |  |  |
+| /WebSite-setup-page | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@store_page |  |  |
+| /WebSite-setup-register-config-page/{event_id}/{config_id} | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@website_register_config_page_delete_option |  |  |
+| /WebSite-setup-register-config/{event_id} | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@website_register_config_page |  |  |
+| /WebSite-setup-page/{event_id}/{option_id} | Auth | DELETE | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@delete_page_slider_option |  |  |
+| /WebSite-setup-page/{event_id}/{option_id} | Auth | PATCH | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@change_page_slider_option |  |  |
+| /WebSite-setup-app | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@store_app |  |  |
+| /WebSite-setup-menu-app/{event_id} | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@website_menu_app |  |  |
+| /WebSite-setup-menu-app/{event_id}/{option_id} | Auth | DELETE | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@website_menu_app_delete_option |  |  |
+| /WebSite-setup-bussines-selectors-config/{event_id} | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@website_bussines_selectors_config_page |  |  |
+| /WebSite-setup-page/meeting-live | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@store_meeting_live |  |  |
+| /WebSite-setup-page/zoom-room | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@store_zoom_room |  |  |
+| /WebSite-setup-company-registration/company-registration | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@company_registration_store |  |  |
+| /WebSite-setup-company-registration-option/company-registration-option | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@company_registration_option_store |  |  |
+| /WebSite-setup-company-registration/company-registration/{id} | Auth | DELETE | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@company_registration_destroy |  |  |
+| /WebSite-setup-company-registration-option/company-registration-option/{id} | Auth | DELETE | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@company_registration_option_destroy |  |  |
+| /WebSite-setup-meetings | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@store_setup_meetings |  |  |
+| /WebSite-setup-categories-nw | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@store_setup_categories_nw |  |  |
+| /WebSite-setup-categories-nw/{id} | Auth | DELETE | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@delete_setup_categories_nw |  |  |
+| /WebSite-setup-subcategories-nw | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@store_setup_subcategories_nw |  |  |
+| /WebSite-setup-subcategories-nw/{id} | Auth | DELETE | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@delete_setup_subcategories_nw |  |  |
+| /WebSite-setup-type-company-nw | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@store_setup_type_company_nw |  |  |
+| /WebSite-setup-type-company-nw/{id} | Auth | DELETE | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@delete_setup_type_company_nw |  |  |
+| /WebSite-setup-feedback-nw | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@store_setup_feedback_nw |  |  |
+| /WebSite-setup-feedback-nw/{id} | Auth | DELETE | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\WebSiteController@feedback_question_delete |  |  |
+| /VirtualSpace2D | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\InteractionController@index2 |  |  |
+| /VirtualSpace2D-setup/{event_id} | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\InteractionController@setup |  |  |
+| /InteractionList/{stand} | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\InteractionController@index |  |  |
+| /Interaction/edit/{id}/{stand} | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\InteractionController@edit |  |  |
+| /Interaction/edit/{id}/{stand} | Auth | PUT | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\InteractionController@update |  |  |
+| /VirtualSpace | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\VirtualSpaceController@index |  |  |
+| /VirtualSpace-setup/{event_id} | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\VirtualSpaceController@setup |  |  |
+| /VirtualSpace-create_catalog/{event_id} | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\VirtualSpaceController@create_catalog |  |  |
+| /VirtualSpace-create | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\VirtualSpaceController@store_catalog |  |  |
+| /VirtualSpace-edit_catalog/{catalog_id}/{event_id} | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\VirtualSpaceController@edit_catalog |  |  |
+| /VirtualSpace-update_catalog/{catalog_id}/{event_id} | Auth | PUT | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\VirtualSpaceController@update_catalog |  |  |
+| /VirtualSpace-create_brand/{catalog_id}/{event_id} | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\VirtualSpaceController@create_brand |  |  |
+| /VirtualSpace-store-brand | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\VirtualSpaceController@store_brand |  |  |
+| /VirtualSpace-catalog_brand/{space_id}/{type_id} | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\VirtualSpaceController@catalog_brand |  |  |
+| /VirtualSpace-edit_brand/{catalog_id}/{event_id}/{id} | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\VirtualSpaceController@edit_brand |  |  |
+| /VirtualSpace-update_brand/{id} | Auth | PUT | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\VirtualSpaceController@update_brand |  |  |
+| /Notification | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NotificationController@index |  |  |
+| /Notification-send/{event_id} | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NotificationController@notifications_send |  |  |
+| /Notification-send/{event_id} | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NotificationController@send_notification |  |  |
+| /Notification-email-send/{event_id} | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NotificationController@notifications_email |  |  |
+| /Notification-email-send/{event_id} | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NotificationController@notifications_email_send |  |  |
+| /news | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NewsController@index |  |  |
+| /Execute | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\executeController@index |  |  |
+| /Setting | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\SettingController@index |  |  |
+| /Networking/NetworkingPlan | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingPlanController@index |  |  |
+| /Networking/NetworkingPlan | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingPlanController@index |  |  |
+| /Networking/Customer | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingCustomerController@index |  |  |
+| /Networking/Customer-create | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingCustomerController@create |  |  |
+| /Networking/Customer-store | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingCustomerController@store |  |  |
+| /Networking/Customer-edit/{NwCustomer} | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingCustomerController@Edit |  |  |
+| /Networking/Customer-update/{NwCustomer} | Auth | PATCH | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingCustomerController@update |  |  |
+| /Networking/Customer-delete | Auth | DELETE | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingCustomerController@destroy |  |  |
+| /Networking/Customer-status | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingCustomerController@status |  |  |
+| /Networking/Hall | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingHallController@index |  |  |
+| /Networking/Hall-create | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingHallController@create |  |  |
+| /Networking/Hall-store | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingHallController@store |  |  |
+| /Networking/Hall-edit/{NwHall} | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingHallController@Edit |  |  |
+| /Networking/Hall-update/{NwHall} | Auth | PATCH | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingHallController@update |  |  |
+| /Networking/Hall-delete | Auth | DELETE | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingHallController@destroy |  |  |
+| /Networking/Hall-status | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingHallController@status |  |  |
+| /Networking/Stand | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingStandController@index |  |  |
+| /Networking/Stand-create | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingStandController@create |  |  |
+| /Networking/Stand-store | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingStandController@store |  |  |
+| /Networking/Stand-edit/{NwStand} | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingStandController@Edit |  |  |
+| /Networking/Stand-update/{NwStand} | Auth | PATCH | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingStandController@update |  |  |
+| /Networking/Stand-delete | Auth | DELETE | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingStandController@destroy |  |  |
+| /Networking/Stand-status | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingStandController@status |  |  |
+| /Networking/Meeting | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingMeetingController@index |  |  |
+| /Networking/Meeting-create | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingMeetingController@create |  |  |
+| /Networking/Meeting-store | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingMeetingController@store |  |  |
+| /Networking/Meeting-edit/{NwMeeting} | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingMeetingController@Edit |  |  |
+| /Networking/Meeting-delete | Auth | DELETE | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingMeetingController@destroy |  |  |
+| /Networking/Meeting-status | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingMeetingController@status |  |  |
+| /Networking/Meeting-Attend | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingMeetingAttendController@attend |  |  |
+| /Networking/Meeting-Finish | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingMeetingAttendController@finish |  |  |
+| /Networking/Meeting-update/{NwMeeting} | Auth | PATCH | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingMeetingController@update |  |  |
+| /Networking/Meeting-update-show/{NwMeeting} | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingMeetingController@show |  |  |
+| /Networking/Meeting-video-show | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingMeetingController@video |  |  |
+| /Networking/Videoconference | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingVideoconferenceController@videoconference |  |  |
+| /Networking/Executive | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingExecutiveController@index |  |  |
+| /Networking/Executive-create | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingExecutiveController@create |  |  |
+| /Networking/Executive-store | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingExecutiveController@store |  |  |
+| /Networking/Executive-show-user | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingExecutiveController@showuser |  |  |
+| /Networking/Executive-delete | Auth | DELETE | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingExecutiveController@destroy |  |  |
+| /Networking/Users | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingUsersController@index |  |  |
+| /Networking/Users-create | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingUsersController@create |  |  |
+| /Networking/Users-store | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingUsersController@store |  |  |
+| /Networking/Users-edit/{NwUser} | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingUsersController@Edit |  |  |
+| /Networking/Users-update/{NwUser} | Auth | PATCH | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingUsersController@update |  |  |
+| /Networking/Users-status | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingUsersController@status |  |  |
+| /Networking/Guest | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingGuestController@index |  |  |
+| /Networking/GuestVisitStand/{stand_id} | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingGuestController@VisitStand |  |  |
+| /Networking/GuestMyMeeting/{event_id} | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingGuestController@MyMeeting |  |  |
+| /Networking/GuestProfile/{event_id} | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingGuestController@Profile |  |  |
+| /Networking/GuestAttend | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingGuestController@Attend |  |  |
+| /Networking/GuestTarget/{event_id} | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingGuestController@Target |  |  |
+| /Networking/GuestExplore/{event_id} | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingGuestController@Explore |  |  |
+| showexecutivecustomer | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingAjaxController@showexecutivecustomer |  |  |
+| GuestReadMeeting | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingAjaxController@GuestReadMeeting |  |  |
+| ActivateRoom | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingAjaxController@ActivateRoom |  |  |
+| GuestProfile-delete | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingAjaxController@ProfileDelete |  |  |
+| GuestProfile-insert | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingAjaxController@ProfileInsert |  |  |
+| GuestProfile-show-attribute | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingAjaxController@ProfileShowAttribute |  |  |
+| GuestProfile-show-attribute-profile | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingAjaxController@ProfileShowAttributeProfile |  |  |
+| GuestProfile-category-create | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingAjaxController@ProfileCategoryCreate |  |  |
+| GuestProfile-attribute-create | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingAjaxController@ProfileAttributeCreate |  |  |
+| GuestTarget-create | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingAjaxController@TargetCreate |  |  |
+| GuestTarget-show-attribute-free | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingAjaxController@TargetShowAttributeFree |  |  |
+| GuestTarget-show-attribute | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingAjaxController@TargetShowAttribute |  |  |
+| GuestTarget-insert | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingAjaxController@TargetInsert |  |  |
+| GuestTarget-delete | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\NetworkingAjaxController@TargetDelete |  |  |
+| Reports/networking | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\ReportController@networking |  |  |
+| Reports/networking/meetings | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\ReportController@networking_meetings |  |  |
+| Reports/networking/meetings/generate | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\ReportController@networking_meetings_generate |  |  |
+| Reports/networking/feedback | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\ReportController@networking_feedback |  |  |
+| Reports/networking/feedback/generate | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\ReportController@networking_feedback_generate |  |  |
+| Reports/networking/company | Auth | GET | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\ReportController@networking_company |  |  |
+| Reports/networking/company/generate | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\ReportController@networking_company_generate |  |  |
+| question/feedback/get | Auth | POST | Ruta para mostrar la configuración de un sitio web | App\Http\Controllers\ReportController@get_questions |  |  |
